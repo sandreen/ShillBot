@@ -70,4 +70,4 @@ class TestWorkerBasic(unittest.TestCase):
         worker.to_crawl = []
         worker.add_links("http://revervefvefvefvef.com/")
 
-        self.assertRaises(WorkerException, worker.run)
+        self.assertRaises(IOError, worker.run)
