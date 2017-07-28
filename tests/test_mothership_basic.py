@@ -1,5 +1,6 @@
 
 import unittest
+import socket
 
 from mothership.base import MothershipServer
 
