@@ -5,9 +5,13 @@ from mothership.base import MothershipServer
 
 
 class TestMothershipBasic(unittest.TestCase):
+    def test_mothership_creation(self):
+        mother = MothershipServer()
 
-    def test_worker_connection(self):
+        self.assertIsInstance(mother, MothershipServer)
+
+    def test_mothership_timeout(self):
         mother = None
         mother = MothershipServer()
 
-        self.assertRaises(ValueError, mother.run())
+        self.assertRaises(socket.timeout, mother.run)
