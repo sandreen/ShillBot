@@ -14,4 +14,4 @@ class TestMothershipBasic(unittest.TestCase):
         mother = None
         mother = MothershipServer()
 
-        self.assertRaises(socket.timeout, mother.run)
+        self.assertRaises(timeout, mother.run)
