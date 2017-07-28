@@ -47,10 +47,3 @@ class MothershipServer(object):
             except:
                 worker.close()
                 return False
-
-
-
-
-
-
-

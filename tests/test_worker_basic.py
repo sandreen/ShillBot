@@ -62,3 +62,12 @@ class TestWorkerBasic(unittest.TestCase):
         worker.add_links(links)
 
         self.assertEqual(len(worker.to_crawl), 3)
+
+    def test_worker_bad_link_argument(self):
+        worker = None
+        worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+
+        worker.to_crawl = []
+        worker.add_links("http://revervefvefvefvef.com/")
+
+        self.assertRaises(IOError, worker.run)

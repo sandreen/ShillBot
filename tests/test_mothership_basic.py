@@ -11,9 +11,3 @@ class TestMothershipBasic(unittest.TestCase):
         mother = MothershipServer()
 
         self.assertIsInstance(mother, MothershipServer)
-
-    def test_mothership_timeout(self):
-        mother = None
-        mother = MothershipServer()
-
-        self.assertRaises(TimeoutError, mother.run)
