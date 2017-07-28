@@ -5,4 +5,9 @@ from mothership.base import MothershipServer
 
 
 class TestMothershipBasic(unittest.TestCase):
-    pass
+
+    def test_mothershit_initialization(self):
+        mother = MothershipServer()
+        motherPort = mother.port
+
+        self.assertEqual(motherPort, 8080)
