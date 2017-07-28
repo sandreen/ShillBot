@@ -1,6 +1,7 @@
 
 import unittest
 import socket
+import os
 
 from mothership.base import MothershipServer
 
@@ -15,4 +16,4 @@ class TestMothershipBasic(unittest.TestCase):
         mother = None
         mother = MothershipServer()
 
-        self.assertRaises(mother.sock.timeout, mother.run)
+        self.assertRaises(TimeoutError, mother.run)
