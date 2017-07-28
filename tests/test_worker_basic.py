@@ -50,12 +50,12 @@ class TestWorkerBasic(unittest.TestCase):
 
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
-    '''def test_worker_add_links_in_crawled(self):
+    def test_worker_send_to_mother(self):
+        worker = None
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-        worker.crawled = []
 
-        len_to_crawl_before = len(worker.to_crawl)
-        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
-        len_to_crawl_after = len(worker.to_crawl)
+        worker.max_links = 10
 
-        self.assertEqual(len_to_crawl_after, len_to_crawl_before)'''
+        worker.add_links("test.com")
+
+        worker.run()
