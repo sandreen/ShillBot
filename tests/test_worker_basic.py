@@ -4,6 +4,7 @@ import codecs
 import os
 
 from workers.basic_worker import BasicUserParseWorker
+from workers.basic_worker import WorkerException
 
 
 class TestWorkerBasic(unittest.TestCase):
@@ -70,4 +71,4 @@ class TestWorkerBasic(unittest.TestCase):
         worker.to_crawl = []
         worker.add_links("http://revervefvefvefvef.com/")
 
-        self.assertRaises(IOError, worker.run)
+        self.assertRaises(WorkerException, worker.run)
